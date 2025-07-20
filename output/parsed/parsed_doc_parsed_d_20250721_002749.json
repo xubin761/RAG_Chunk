@@ -1,0 +1,58 @@
+{
+  "page_content": "测试文档\n\n这是一个用于测试解析器的示例文档。\n\n章节1\n\n这是第一章的内容。\n\n表格测试\n\n列1 列2 列3 行1 数据 测试 行2 更多 数据\n\n图像测试\n\n测试图像",
+  "document_id": "parsed_doc_779bf636c5f30b413c679239be9b3cd7_20250721002749",
+  "file_name": "sample.md",
+  "file_type": "md",
+  "file_path": "test_files\\sample.md",
+  "chunks": [
+    {
+      "page_content": "测试文档\n\n这是一个用于测试解析器的示例文档。\n\n章节1\n\n这是第一章的内容。\n\n表格测试\n\n列1 列2 列3 行1 数据 测试 行2 更多 数据\n\n图像测试\n\n测试图像",
+      "chunk_id": "chunk_parsed_doc_779bf636c5f30b413c679239be9b3cd7_20250721002749_0",
+      "chunk_size": 85,
+      "chunk_overlap": 0,
+      "chunk_method": "initial_parser",
+      "metadata": {
+        "file_name": "sample.md",
+        "file_path": "C:\\Users\\Administrator\\Documents\\GitHub\\RAG_Chunk\\test_files\\sample.md",
+        "file_size": 290,
+        "file_type": "md",
+        "parsed_at": "2025-07-21T00:27:45.026140",
+        "parser_params": {
+          "extract_tables": false,
+          "extract_images": false,
+          "tesseract_config": "--oem 3 --psm 6"
+        },
+        "total_pages": 1,
+        "parser_used": "LangChainUnstructuredMarkdownLoader",
+        "extracted_tables": 0,
+        "extracted_images": 0
+      },
+      "created_at": "2025-07-21T00:27:44.484603"
+    }
+  ],
+  "total_chunks": 1,
+  "total_size": 85,
+  "metadata": {
+    "file_name": "sample.md",
+    "file_path": "C:\\Users\\Administrator\\Documents\\GitHub\\RAG_Chunk\\test_files\\sample.md",
+    "file_size": 290,
+    "file_type": "md",
+    "parsed_at": "2025-07-21T00:27:45.026140",
+    "parser_params": {
+      "extract_tables": false,
+      "extract_images": false,
+      "tesseract_config": "--oem 3 --psm 6"
+    },
+    "total_pages": 1,
+    "parser_used": "LangChainUnstructuredMarkdownLoader",
+    "extracted_tables": 0,
+    "extracted_images": 0
+  },
+  "created_at": "2025-07-21T00:27:44.485402",
+  "loader_used": "LangChainUnstructuredMarkdownLoader",
+  "loader_params": {
+    "extract_tables": false,
+    "extract_images": false,
+    "tesseract_config": "--oem 3 --psm 6"
+  }
+}
