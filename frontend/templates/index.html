@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG文档处理工具</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RAG文档处理工具</h1>
+            <p>上传、解析和分块处理您的文档</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2><i class="fas fa-upload"></i> 上传文件</h2>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file-input">选择文件:</label>
+                        <input type="file" id="file-input" name="file" accept=".txt,.pdf,.md,.docx,.xlsx" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chunk-type">分块类型:</label>
+                        <select id="chunk-type" name="chunk_type">
+                            <option value="paragraph">按段落</option>
+                            <option value="langchain">LangChain分块器</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chunk-size">块大小:</label>
+                        <input type="number" id="chunk-size" name="chunk_size" value="1000" min="100" max="5000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="overlap">重叠大小:</label>
+                        <input type="number" id="overlap" name="overlap" value="100" min="0" max="500">
+                    </div>
+
+                    <button type="submit" class="btn-primary">处理文件</button>
+                </form>
+            </section>
+
+            <section class="processing-section hidden">
+                <h2><i class="fas fa-spinner fa-spin"></i> 处理中...</h2>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div id="processing-log"></div>
+            </section>
+
+            <section class="results-section hidden">
+                <h2><i class="fas fa-file-export"></i> 处理结果</h2>
+                <div id="results-summary"></div>
+                <div id="results-files"></div>
+                <div id="results-content"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 RAG文档处理工具 | 基于Flask构建</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
