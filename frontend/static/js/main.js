@@ -104,7 +104,7 @@ $(document).ready(function() {
             resultsFiles.append(`
                 <div class="result-file">
                     <h3>文件 ${index + 1}: ${fileName}</h3>
-                    <button class="btn-secondary view-json" data-file="${file}">
+                    <button class="btn-secondary view-json" data-file="${file.replace(/\\/g, '/')}">
                         <i class="fas fa-eye"></i> 查看内容
                     </button>
                 </div>

@@ -26,13 +26,13 @@ def run_process(file_path, chunk_type='paragraph', chunk_size=1000, overlap=100)
 
     # 构建命令
     cmd = [
-        'python', 'main.py', 'process',
-        file_path,
-        '--output_dir', output_dir,
-        '--chunk_type', chunk_type,
-        '--chunk_size', str(chunk_size),
-        '--overlap', str(overlap)
-    ]
+            'python', 'main.py', 'process',
+            file_path,
+            '--output_dir', output_dir,
+            '--chunk_strategy', chunk_type,
+            '--chunk_size', str(chunk_size),
+            '--chunk_overlap', str(overlap)
+        ]
 
     try:
         # 运行命令
@@ -48,7 +48,9 @@ def run_process(file_path, chunk_type='paragraph', chunk_size=1000, overlap=100)
         for root, dirs, files in os.walk(output_dir):
             for file in files:
                 if file.endswith('.json'):
-                    json_files.append(os.path.join(root, file))
+                    # 计算相对于输出目录的路径
+                    relative_path = os.path.relpath(os.path.join(root, file), app.config['OUTPUT_FOLDER'])
+                    json_files.append(relative_path)
 
         return {
             'success': True,
